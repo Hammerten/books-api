@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  # APP
+  books:
+    build:
+      context: .
+      dockerfile: ./apps/books/Dockerfile
+      target: development
+    command: /start.sh books development
+    ports:
+      - '${BOOKS_PORT}:3000'
+    env_file:
+      - ./apps/books/.env.development
+    depends_on:
+      - booksPg
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+  # DB
+  booksPg:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: '${BOOKS_DB_USERNAME}'
+      POSTGRES_PASSWORD: '${BOOKS_DB_PASSWORD}'
+      POSTGRES_DB: '${BOOKS_DB_DATABASE}'
+    ports:
+      - '${BOOKS_DB_PORT}:5432'
+    volumes:
+      - booksPg:/var/lib/postgresql/data
+volumes:
+  booksPg:
+    driver: local

@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/common/*": [
+        "libs/common/src/*"
+      ],
+      "@app/utils": [
+        "libs/utils/src"
+      ],
+      "@app/utils/*": [
+        "libs/utils/src/*"
+      ],
+      "@app/books-lib": [
+        "libs/books-lib/src"
+      ],
+      "@app/books-lib/*": [
+        "libs/books-lib/src/*"
+      ],
+      "@app/users-lib": [
+        "libs/users-lib/src"
+      ],
+      "@app/users-lib/*": [
+        "libs/users-lib/src/*"
+      ],
+      "@app/book-pages-lib": [
+        "libs/book-pages-lib/src"
+      ],
+      "@app/book-pages-lib/*": [
+        "libs/book-pages-lib/src/*"
+      ],
+      "@app/auth-lib": [
+        "libs/auth-lib/src"
+      ],
+      "@app/auth-lib/*": [
+        "libs/auth-lib/src/*"
+      ],
+      "@app/tokens-lib": [
+        "libs/tokens-lib/src"
+      ],
+      "@app/tokens-lib/*": [
+        "libs/tokens-lib/src/*"
+      ],
+      "@app/health-check": [
+        "libs/health-check/src"
+      ],
+      "@app/health-check/*": [
+        "libs/health-check/src/*"
+      ]
+    }
+  }
+}
