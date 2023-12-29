@@ -1,4 +1,4 @@
-# Book API
+# Books API
 
 ## Project Setup
 
@@ -38,7 +38,7 @@ Ensure you have the following prerequisites installed on your machine:
 
 ## API Documentation
 
-API documentation is available through Swagger. Access it at [http://localhost:<port>/api](http://localhost:<port>/api) after starting the application.
+API documentation is available through Swagger. Access it at [http://localhost:4000/api](http://localhost:4000/api) after starting the application.
 
 ## Customization
 
