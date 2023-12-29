@@ -109,48 +109,6 @@ export class UsersLibService extends PaginatedService<UserEntity> {
     return this.usersRepository.findByIds(ids);
   }
 
-  //   public async changePassword(
-  //     id: string,
-  //     { password, newPassword, confirmPassword }: ChangePassword,
-  //   ): Promise<void | never> {
-  //     if (newPassword !== confirmPassword) {
-  //       throw new BadRequestException({
-  //         message: 'New passwords do not match',
-  //       });
-  //     }
-
-  //     const user = await this.usersRepository.findById(id);
-
-  //     if (!user) {
-  //       throw new NotFoundException({
-  //         message: 'User not found',
-  //       });
-  //     }
-
-  //     const [isPasswordMatch, isSamePassword] = await Promise.all([
-  //       this.passwordService.compare(password, user.password),
-  //       this.passwordService.compare(newPassword, user.password),
-  //     ]);
-
-  //     if (!isPasswordMatch) {
-  //       throw new BadRequestException({
-  //         message: 'Current password is incorrect',
-  //       });
-  //     }
-
-  //     if (isSamePassword) {
-  //       throw new BadRequestException({
-  //         message: 'New password can not be same as old',
-  //       });
-  //     }
-
-  //     const hashedPassword = await this.passwordService.hash(newPassword);
-
-  //     await this.usersRepository.updateById(id, {
-  //       password: hashedPassword,
-  //     });
-  //   }
-
   public async updateUserPassword(id: string, password: string): Promise<void> {
     const user = await this.findById(id);
 
